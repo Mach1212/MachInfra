@@ -316,6 +316,31 @@
           action = "<CMD>FormatGitHunksToggle<CR>";
           options.desc = "Toggle Git Hunk Formatting";
         }
+      ]
+      # COMMENTS
+      ++ [
+        {
+          key = "<leader>/";
+          action = "gcc";
+          options = {remap = true;};
+        }
+        {
+          key = "<leader>?";
+          action = "gbc";
+          options = {remap = true;};
+        }
+        {
+          key = "<leader>/";
+          action = "gcc";
+          options = {remap = true;};
+          mode = "v";
+        }
+        {
+          key = "<leader>?";
+          action = "gbc";
+          options = {remap = true;};
+          mode = "v";
+        }
       ];
 
   plugins.telescope = {

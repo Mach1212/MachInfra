@@ -69,6 +69,13 @@
     nvim-autopairs.enable = true; # Pairs quotes, parens and curly's
     todo-comments.enable = true; # Highlights TODO: in the code base
     ts-comments.enable = true; # Enables commenting via <leader-/>
+    render-markdown = {
+      enable = true;
+      # settings = {
+      #   render_modes = helpers.listToUnkeyedAttrs ["n" "v" "c" "t" "i"];
+      # };
+    };
+    lualine.enable = true;
   };
 
   extraPlugins = with pkgs; [

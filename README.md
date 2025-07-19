@@ -7,6 +7,11 @@
 
 ## IDE
 
+### INSTALLING
+1. Run `cd nixvim_config && nix build`
+2. `alias vi=$PWD/result/bin/nvim`
+
+### GOALS
 - Separated by feature so finding what is used for what is easier. If a feature is buggy, go to that file and debug it's plugins.
 
 ## IDE OLD
