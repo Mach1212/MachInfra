@@ -6,7 +6,6 @@
     # https://github.com/NixOS/nixpkgs/tags
     # nixpkgs.url = "github:{owner}/{repo}/{commitHash/Tag}";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-old.url = "github:NixOS/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
     nixvim.url = "github:nix-community/nixvim";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -44,7 +43,6 @@
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
             inherit inputs;
-            pkgs-old = import inputs.nixpkgs-old {inherit system;};
           };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;

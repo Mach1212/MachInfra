@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-old,
-  ...
-}: {
+{pkgs, ...}: {
   plugins.lsp = {
     # lazyLoad.settings = {
     #   event = ["BufReadPost" "BufNewFile"];
@@ -10,20 +6,18 @@
     # };
     servers = {
       nil_ls.enable = true;
-      nixd = {
-        enable = true;
-        package = pkgs-old.nixd;
-      };
+      nixd.enable = true;
+
       bashls.enable = true;
 
       cmake.enable = true;
 
       # python
-      # pylyzer = {
-      #   package = null;
-      #   enable = true;
-      # };
-      basedpyright.enable = true;
+      pylyzer = {
+        # package = null;
+        enable = true;
+      };
+      # basedpyright.enable = true;
 
       lua_ls.enable = true;
 

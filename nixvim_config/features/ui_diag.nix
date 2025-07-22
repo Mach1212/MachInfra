@@ -1,5 +1,5 @@
 {
-  diagnostics.settings = {
+  diagnostic.settings = {
     virtual_text = {
       source = "always";
     };
@@ -7,6 +7,26 @@
     float = {
       source = "always";
     };
+    signs = true;
+    #   text = [
+    #     {
+    #       name = "DiagnosticSignError";
+    #       text = "❌";
+    #     }
+    #     {
+    #       name = "DiagnosticSignWarn";
+    #       text = "⚠";
+    #     }
+    #     {
+    #       name = "DiagnosticSignHint";
+    #       text = "🔎";
+    #     }
+    #     {
+    #       name = "DiagnosticSignInfo";
+    #       text = "ℹ";
+    #     }
+    #   ];
+    # };
   };
   extraConfigLua =
     #lua

@@ -341,6 +341,14 @@
           options = {remap = true;};
           mode = "v";
         }
+      ]
+      # UX
+      ++ [
+        {
+          key = "<leader>mn";
+          options.desc = "Misc get ascii wingdings";
+          action = "<CMD>lua require('telescope').extensions.nerdy.nerdy()<CR>";
+        }
       ];
 
   plugins.telescope = {

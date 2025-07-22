@@ -13,4 +13,5 @@
       standalonePlugins = ["conform.nvim" "hlargs"];
     };
   };
+  plugins.lz-n.enable = true;
 }

@@ -3,7 +3,6 @@
   inputs,
   ...
 }: {
-  package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   luaLoader.enable = true;
 
   viAlias = true;
@@ -16,6 +15,7 @@
     undofile = true;
     mouse = "a";
     mousemodel = "extend";
+    grepprg = "rg --vimgrep";
   };
 
   # extraConfigLua = ''

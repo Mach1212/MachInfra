@@ -40,6 +40,7 @@
   # Multicursor
   # No astrotheme, just my own quick colorscheme
   # UI glitch, if in a nix file go to root {} and see red initial color replaced with wack white
+  # add plugin which adds file templates for new files
 
   plugins = {
     treesitter.enable = true; # Allows vim to understand programming languages structure
@@ -76,6 +77,7 @@
       # };
     };
     lualine.enable = true;
+    nerdy.enable = true;
   };
 
   extraPlugins = with pkgs; [
