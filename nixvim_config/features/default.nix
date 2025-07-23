@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  helpers,
   ...
 }: {
   imports = [
@@ -29,18 +30,9 @@
     ./ui_tabs.nix
     ./ui_sidebar.nix
     ./ui_ux.nix
+    ./ux_performance.nix
     ./ux_session.nix
   ];
-
-  # decrease repeat-delay time
-  # Lazygit include config w/ work profile
-  # close all buffers to my right or left / all
-  # Grok integration
-  # WCA integration
-  # Multicursor
-  # No astrotheme, just my own quick colorscheme
-  # UI glitch, if in a nix file go to root {} and see red initial color replaced with wack white
-  # add plugin which adds file templates for new files
 
   plugins = {
     treesitter.enable = true; # Allows vim to understand programming languages structure
@@ -60,10 +52,7 @@
     gitsigns.enable = true; # Gutter git lines and git keybinds like blame
     gitlinker.enable = true; # Keybinds for quickly linking to lines of code in a commit
     auto-session.enable = true; # Save current open tabs and reopen
-    indent-blankline = {
-      enable = true; # Nice indentation highlighting
-      # settings.scope.enable = false; # Disable rainbow indents
-    };
+    indent-blankline.enable = true; # Nice indentation highlighting
     neo-tree.enable = true; # File explorer sidebar
     rainbow-delimiters.enable = true; # rainbow () {} pairs corresponding to indentation
     conform-nvim.enable = true; # Code formatter
@@ -72,12 +61,15 @@
     ts-comments.enable = true; # Enables commenting via <leader-/>
     render-markdown = {
       enable = true;
-      # settings = {
-      #   render_modes = helpers.listToUnkeyedAttrs ["n" "v" "c" "t" "i"];
-      # };
+      settings = {
+        render_modes = helpers.listToUnkeyedAttrs ["n" "v" "c" "t" "i" "r"];
+      };
     };
     lualine.enable = true;
     nerdy.enable = true;
+    typescript-tools.enable = true;
+    tailwind-tools.enable = true;
+    mini.enable = true;
   };
 
   extraPlugins = with pkgs; [
@@ -121,7 +113,7 @@
     fzy-native.enable = true;
   };
   plugins.treesitter = {
-    nixvimInjections = false; #
+    nixvimInjections = true; #
     settings = {
       incremental_selection.enable = true; #
       parser_install_dir = {

@@ -53,24 +53,24 @@
           key = "k";
           action = "gk";
         }
-        # {
-        #   key = "[d";
-        #   options.desc = "Previous diagnostic";
-        #   action.__raw = ''
-        #     function()
-        #       vim.diagnostic.goto_prev()
-        #     end
-        #   '';
-        # }
-        # {
-        #   key = "]d";
-        #   options.desc = "Next diagnostic";
-        #   action.__raw = ''
-        #     function()
-        #       vim.diagnostic.goto_next()
-        #     end
-        #   '';
-        # }
+        {
+          key = "[d";
+          options.desc = "Previous diagnostic";
+          action.__raw = ''
+            function()
+              vim.diagnostic.goto_prev()
+            end
+          '';
+        }
+        {
+          key = "]d";
+          options.desc = "Next diagnostic";
+          action.__raw = ''
+            function()
+              vim.diagnostic.goto_next()
+            end
+          '';
+        }
         {
           key = "<leader>ln";
           options.desc = "Lsp Diagnostics";
@@ -91,21 +91,21 @@
           options.desc = "Lsp Notif";
           action = "<CMD>LspInfo<CR>";
         }
-        # {
-        #   key = "<leader>la";
-        #   options.desc = "Lsp Action";
-        #   action = "<CMD>lua vim.lsp.buf.code_action()<CR>";
-        # }
-        # {
-        #   key = "<leader>lr";
-        #   options.desc = "Lsp Rename";
-        #   action = "<CMD>lua vim.lsp.buf.rename()<CR>";
-        # }
-        # {
-        #   key = "<leader>lR";
-        #   options.desc = "Lsp References";
-        #   action = "<CMD>lua vim.lsp.buf.references()<CR>";
-        # }
+        {
+          key = "<leader>la";
+          options.desc = "Lsp Action";
+          action = "<CMD>lua vim.lsp.buf.code_action()<CR>";
+        }
+        {
+          key = "<leader>lr";
+          options.desc = "Lsp Rename";
+          action = "<CMD>lua vim.lsp.buf.rename()<CR>";
+        }
+        {
+          key = "<leader>lR";
+          options.desc = "Lsp References";
+          action = "<CMD>lua vim.lsp.buf.references()<CR>";
+        }
         {
           key = "<leader>ld";
           options.desc = "Lsp Definition";
@@ -122,6 +122,49 @@
           action = "<CMD>ToggleDiagnostics<CR>";
         }
       ]
+      # QUICKFIX
+      # ++ [
+      #   {
+      #     key = "gr";
+      #     options.desc = "Get References";
+      #     action = "<CMD>lua require('telescope.builtin').lsp_references()<CR>";
+      #   }
+      #   {
+      #     key = "[d";
+      #     options.desc = "Previous diagnostic";
+      #     action = ''<CMD>Lspsaga diagnostic_jump_prev<CR>'';
+      #   }
+      #   {
+      #     key = "]d";
+      #     options.desc = "Next diagnostic";
+      #     action = ''<CMD>Lspsaga diagnostic_jump_next<CR>'';
+      #   }
+      #   {
+      #     key = "<leader>la";
+      #     options.desc = "Lsp Action";
+      #     action = ''<CMD>Lspsaga code_action<CR>'';
+      #   }
+      #   {
+      #     key = "gd";
+      #     options.desc = "Goto Definition";
+      #     action = ''<CMD>lua require('telescope.builtin').lsp_definitions()<CR>'';
+      #   }
+      #   {
+      #     key = "<leader>lS";
+      #     options.desc = "Lsp Outline";
+      #     action = ''<CMD>Lspsaga outline<CR>'';
+      #   }
+      #   {
+      #     key = "<leader>lr";
+      #     options.desc = "Lsp Rename";
+      #     action = "<CMD>Lspsaga rename<CR>";
+      #   }
+      #   {
+      #     key = "<leader>lR";
+      #     options.desc = "Lsp Project Rename";
+      #     action = "<CMD>Lspsaga rename ++project<CR>";
+      #   }
+      # ]
       # NAVIGATION
       ++ [
         {

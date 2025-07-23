@@ -17,7 +17,7 @@
         enabled = true;
         semantic_token_resolution = {
           #
-          enabled = false;
+          enabled = true;
           # blocked_filetypes = ["java"];
           timeout_ms = 400;
         };

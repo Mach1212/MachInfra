@@ -14,10 +14,23 @@
 
       # python
       pylyzer = {
-        # package = null;
         enable = true;
+        package = pkgs.symlinkJoin {
+          name = "pylyzer-patched";
+          paths = [pkgs.pylyzer];
+          buildInputs = [pkgs.makeWrapper];
+          postBuild = ''
+            wrapProgram $out/bin/pylyzer \
+            --unset CONDA_PREFIX \
+            --unset CONDA_PROMPT_MODIFIER \
+            --unset CONDA_SHLVL \
+            --unset CONDA_DEFAULT_ENV \
+            --unset CONDA_ENV_PATH \
+            --unset PYTHONPATH \
+            --unset PATH
+          '';
+        };
       };
-      # basedpyright.enable = true;
 
       lua_ls.enable = true;
 
@@ -27,7 +40,6 @@
       # webdev
       html.enable = true;
       cssls.enable = true;
-      tailwindcss.enable = true;
       eslint = {
         enable = true;
         package = pkgs.eslint_d;
