@@ -4,6 +4,7 @@
 
 - thing which deletes everything on boot
 - Python thingi
+- sccache cmake and rust
 
 ## IDE
 

@@ -3,9 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
+
+  # TODO: Nice ui for found swap file. Like Astro have y n a menu
 
   outputs = {
     nixvim,
@@ -25,13 +28,15 @@
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
           inherit system; # or alternatively, set `pkgs`
-          module = import [
-            ./core
-            ./features
-          ]; # import the module directly
-          # You can use `extraSpecialArgs` to pass additional arguments to your module files
+          module = {
+            imports = [
+              ./core
+              ./features
+            ];
+          };
+
           extraSpecialArgs = {
-            # inherit (inputs) foo;
+            inherit inputs;
           };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
