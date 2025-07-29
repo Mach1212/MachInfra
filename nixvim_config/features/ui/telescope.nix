@@ -20,11 +20,14 @@
           q = "close";
           h = "results_scrolling_left"; # scroll left
           l = "results_scrolling_right"; # scroll right
+          # TODO: enter doesn't open multiple things
           "<Tab>" = "move_selection_next";
           "<S-Tab>" = "move_selection_previous";
           "<Down>".__raw = ''require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_next'';
           "<Up>".__raw = ''require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_previous'';
 
+          "<PageUp>" = "results_scrolling_up";
+          "<PageDown>" = "results_scrolling_down";
           "<C-h>" = "preview_scrolling_left"; # scroll left
           "<C-l>" = "preview_scrolling_right"; # scroll right
           "<C-j>" = "preview_scrolling_down"; # scroll down
@@ -36,8 +39,6 @@
           "<Down>".__raw = ''require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_next'';
           "<Up>".__raw = ''require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_previous'';
 
-          # ["<PageUp>"] = actions.results_scrolling_up,
-          # ["<PageDown>"] = actions.results_scrolling_down,
           "<C-h>" = "preview_scrolling_left"; # scroll left
           "<C-l>" = "preview_scrolling_right"; # scroll right
           "<C-j>" = "preview_scrolling_down"; # scroll down
@@ -72,29 +73,6 @@
       };
     };
   };
-
-  # extraConfigLua =
-  #   # lua
-  #   ''
-  #     require("telescope").setup({
-  #     	defaults = {
-  #     		mappings = {
-  #     			n = {
-  #     				["<Down>"] = require("telescope.actions").toggle_selection
-  #     					+ require("telescope.actions").move_selection_next,
-  #     				["<Up>"] = require("telescope.actions").toggle_selection
-  #     					+ require("telescope.actions").move_selection_previous,
-  #     			},
-  #     			i = {
-  #     				["<Down>"] = require("telescope.actions").toggle_selection
-  #     					+ require("telescope.actions").move_selection_next,
-  #     				["<Up>"] = require("telescope.actions").toggle_selection
-  #     					+ require("telescope.actions").move_selection_previous,
-  #     			},
-  #     		},
-  #     	},
-  #     })
-  #   '';
 
   keymaps = [
     # TODO: add todo finding

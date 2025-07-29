@@ -84,5 +84,13 @@
       action = "<gv";
       options.desc = "UnIndent Selection";
     }
+    {
+      key = "j";
+      action = "gj"; # Move down on screen lines rather than code lines. Super useful when code is wrapped and a line is multiple screen lines
+    }
+    {
+      key = "k";
+      action = "gk";
+    }
   ];
 }

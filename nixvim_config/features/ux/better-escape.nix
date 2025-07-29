@@ -1,6 +1,7 @@
-{
+{helpers, ...}: {
   plugins.better-escape = {
     enable = true;
+    # TODO: disable jj and kk in a toggleterm
     settings.mappings = {
       c = {
         J = {
@@ -20,15 +21,14 @@
         };
       };
       t = {
+        j = helpers.listToUnkeyedAttrs [false];
         J = {
           J = "<Esc>";
           K = "<Esc>";
         };
       };
       v = {
-        J = {
-          K = "<Esc>";
-        };
+        j = helpers.listToUnkeyedAttrs [false];
       };
     };
   };

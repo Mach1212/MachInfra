@@ -2,6 +2,32 @@
   opts = {
     number = true;
     relativenumber = true;
+    termguicolors = true;
+    shiftwidth = 2;
+    tabstop = 2;
+    ignorecase = true;
+    smartcase = true;
+    undofile = true;
+    mouse = "a";
+    mousemodel = "extend";
+    inccommand = "split";
+    linebreak = true;
+    smartindent = true;
+  };
+
+  globalOpts = {
+    sessionoptions = [
+      "blank"
+      "buffers"
+      "curdir"
+      "folds"
+      "help"
+      "tabpages"
+      "winsize"
+      "winpos"
+      "terminal"
+      "localoptions"
+    ];
   };
 
   extraConfigLua =

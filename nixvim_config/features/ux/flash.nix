@@ -16,4 +16,10 @@
       options.desc = "Flash Treesitter";
     }
   ];
+  highlightOverride = {
+    FlashLabel = {
+      bg = "#eb8332";
+      fg = "#1a1d23";
+    };
+  };
 }

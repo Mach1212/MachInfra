@@ -1,11 +1,49 @@
-{
-  # TODO: git branch sessions
+{helpers, ...}: {
   # lspconfig is same as lsp.enable. https://github.com/neovim/nvim-lspconfig/blob/master/lsp
   plugins.lsp = {
     enable = true;
     # TODO: Research this
     # inlayHints.enable = true;
     servers = {
+      nil_ls.enable = true;
+      nixd.enable = true;
+
+      markdown_oxide.enable = true;
+
+      lua_ls = {
+        enable = true;
+        extraOptions = {
+          # TODO: Figure this out
+          Lua = {
+            runtime = {
+              version = "LuaJIT";
+            };
+            diagnostics = {
+              # globals = {__raw = "vim";};
+              globals = helpers.listToUnkeyedAttrs ["vim"];
+            };
+            workspace = {
+              library.__raw = ''vim.api.nvim_get_runtime_file("", true)'';
+            };
+          };
+        };
+      };
+
+      bashls.enable = true;
+
+      basedpyright.enable = true;
+
+      # webdev
+      html.enable = true;
+      cssls.enable = true;
+      tailwindcss.enable = true;
+      eslint.enable = true;
+
+      jsonls.enable = true;
+      yamlls.enable = true;
+
+      dockerls.enable = true;
+      docker_compose_language_service.enable = true;
       # TODO: Research this
       # "*" = {
       #   settings = {
@@ -21,13 +59,10 @@
       #     ];
       #   };
       # };
-      nil_ls.enable = true;
-      nixd.enable = true;
-
-      markdown_oxide.enable = true;
     };
     keymaps = {
       lspBuf = {
+        # TODO: make this menu slightly transparent
         K = "hover";
       };
       extra = [
@@ -48,11 +83,11 @@
           key = "gT";
         }
         {
-          action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
+          action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
           key = "]d";
         }
         {
-          action = "function() vim.diagnostic.jump({ count=1, float=true }) end";
+          action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
           key = "[d";
         }
         {
@@ -63,35 +98,49 @@
       ];
     };
   };
+  diagnostic.settings = {
+    virtual_text = {
+      source = "always";
+    };
+    severity_sort = true;
+    float = {
+      source = "always";
+    };
+  };
   extraConfigLua =
-    #lua
+    # lua
     ''
-      local mach12toggleLspDiagnostics = 0
-      vim.api.nvim_create_user_command("ToggleDiagnostics", function(args)
-      	if mach12toggleLspDiagnostics == 0 then
-      		vim.diagnostic.config({
-      			underline = false,
-      			virtual_text = false,
-      			signs = false,
-      			update_in_insert = false,
-      		})
-      		mach12toggleLspDiagnostics = 1
-      	elseif mach12toggleLspDiagnostics == 1 then
-      		vim.diagnostic.config({
-      			underline = true,
-      			update_in_insert = true,
-      			signs = true,
-      		})
-      		mach12toggleLspDiagnostics = 2
-      	elseif mach12toggleLspDiagnostics == 2 then
-      		vim.diagnostic.config({
-      			virtual_text = true,
-      		})
-      		mach12toggleLspDiagnostics = 0
-      	end
-      end, {
-      	desc = "Toggle line numbers",
-      })
+      -- TODO: Reorder diags so errors are first
+      -- TODO: Block align diags so lots of them aren't as distracting
+      local mach12toggleLspDiagnostics = 2
+      local toggleDiagnostics =
+      	function()
+      		if mach12toggleLspDiagnostics == 0 then
+      			vim.diagnostic.config({
+      				underline = false,
+      				virtual_text = false,
+      				signs = false,
+      				update_in_insert = false,
+      			})
+      			mach12toggleLspDiagnostics = 1
+      		elseif mach12toggleLspDiagnostics == 1 then
+      			vim.diagnostic.config({
+      				underline = true,
+      				update_in_insert = true,
+      				signs = true,
+      			})
+      			mach12toggleLspDiagnostics = 2
+      		elseif mach12toggleLspDiagnostics == 2 then
+      			vim.diagnostic.config({
+      				virtual_text = true,
+      			})
+      			mach12toggleLspDiagnostics = 0
+      		end
+      	end, {
+      		desc = "Toggle line numbers",
+      	}
+      toggleDiagnostics()
+      vim.api.nvim_create_user_command("ToggleDiagnostics", toggleDiagnostics, { desc = "Toggle lsp diagnostics" })
     '';
 }
 # TODO: remove treesitter parsers checkhealth section

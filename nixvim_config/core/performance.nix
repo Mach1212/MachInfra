@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   performance = {
     byteCompileLua = {
       enable = true;
@@ -13,4 +13,5 @@
     };
   };
   luaLoader.enable = true;
+  # TODO: request lzn-auto-require be added
 }

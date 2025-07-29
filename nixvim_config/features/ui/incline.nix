@@ -4,6 +4,7 @@
   ];
   extraConfigLua =
     # TODO: update highlight based on mode
+    # TODO: Have left side have \ slant
     # lua
     ''
       require("incline").setup({

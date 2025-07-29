@@ -1,5 +1,10 @@
 {
-  plugins.notify.enable = true;
+  plugins.notify = {
+    enable = true;
+    settings = {
+      render = "compact";
+    };
+  };
   keymaps = [
     {
       key = "<leader>un";

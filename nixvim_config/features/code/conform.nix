@@ -102,6 +102,9 @@
         prettierd = {
           command = lib.getExe pkgs.prettierd;
         };
+        eslint_d = {
+          command = lib.getExe pkgs.eslint_d;
+        };
         stylua = {
           command = lib.getExe pkgs.stylua;
         };

@@ -9,9 +9,15 @@ If you add a new configuration file, remember to add it to the
 
 ## Testing your new configuration
 
+
 To test your configuration simply run the following command
 
 ```bash
 nix run .
 ```
 
+
+Todo:
+Fix indent
+Fix cursor color
+Otternvim

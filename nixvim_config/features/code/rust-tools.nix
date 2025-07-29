@@ -1,11 +1,21 @@
 {
   # TODO: telescope preview doesn't have highlighting like todo highlighting or colorizor
-  plugins.rust-tools = {
+  plugins.rustaceanvim = {
     enable = true;
-    inlayHints = {
-      auto = false;
-      highlight = null;
+    settings.server = {
+      default_settings = {
+        rust-analyzer = {
+          check = {
+            command = "clippy";
+          };
+          inlayHints = {
+            lifetimeElisionHints = {
+              enable = "always";
+            };
+          };
+        };
+      };
+      standalone = false;
     };
-    server.standalone = false;
   };
 }
