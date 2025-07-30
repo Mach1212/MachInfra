@@ -4,7 +4,7 @@
   keymaps = [
     {
       key = "<leader>q";
-      action = "<CMD>q<CR>";
+      action = "<CMD>wqall<CR>";
       options.desc = "Vim Quit";
     }
     {

@@ -5,12 +5,20 @@
     settings.server = {
       default_settings = {
         rust-analyzer = {
+          assist = {
+            importEnforceGranularity = true;
+            importPrefix = "crate";
+          };
+          cargo = {
+            allFeatures = true;
+          };
           check = {
             command = "clippy";
           };
           inlayHints = {
             lifetimeElisionHints = {
-              enable = "always";
+              enable = "skip_trivial";
+              useParameterNames = true;
             };
           };
         };

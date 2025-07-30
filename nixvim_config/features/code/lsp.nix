@@ -68,31 +68,52 @@
       extra = [
         {
           action.__raw = "require('telescope.builtin').lsp_definitions";
-          key = "gd";
+          options.desc = "LspDeclaration";
+          key = "<leader>ld";
         }
         {
           action.__raw = "require('telescope.builtin').lsp_references";
-          key = "gD";
+          options.desc = "LspReferences";
+          key = "<leader>lr";
+        }
+        {
+          action.__raw = "vim.lsp.buf.rename";
+          options.desc = "LspRename";
+          key = "<leader>lR";
         }
         {
           action.__raw = "require('telescope.builtin').lsp_type_definitions";
-          key = "gt";
+          options.desc = "LspTypeDefinitions";
+          key = "<leader>lt";
         }
         {
           action.__raw = "require('telescope.builtin').lsp_implementations";
-          key = "gT";
+          options.desc = "LspImplementations";
+          key = "<leader>li";
+        }
+        {
+          action.__raw = "require('telescope.builtin').lsp_implementations";
+          options.desc = "LspImplementations";
+          key = "<leader>li";
+        }
+        {
+          action.__raw = "vim.lsp.buf.code_action";
+          options.desc = "LspCodeAction";
+          key = "<leader>la";
         }
         {
           action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
+          options.desc = "LspDiagnosticJump";
           key = "]d";
         }
         {
           action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
+          options.desc = "LspDiagnosticJump";
           key = "[d";
         }
         {
           key = "<leader>ud";
-          options.desc = "Toggle lsp diagnostics";
+          options.desc = "LspDiagnosticsToggle";
           action = "<CMD>ToggleDiagnostics<CR>";
         }
       ];
@@ -100,11 +121,12 @@
   };
   diagnostic.settings = {
     virtual_text = {
-      source = "always";
+      source = false;
+      severity_sort = true;
     };
-    severity_sort = true;
     float = {
-      source = "always";
+      source = true;
+      severity_sort = true;
     };
   };
   extraConfigLua =
@@ -139,7 +161,6 @@
       	end, {
       		desc = "Toggle line numbers",
       	}
-      toggleDiagnostics()
       vim.api.nvim_create_user_command("ToggleDiagnostics", toggleDiagnostics, { desc = "Toggle lsp diagnostics" })
     '';
 }

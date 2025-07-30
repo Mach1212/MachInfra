@@ -61,51 +61,41 @@
       pickers = {
         find_files = {
           find_command = [
-            "fd"
-            "--type"
-            "f"
+            "rg"
+            "--files"
             "--hidden"
-            "--strip-cwd-prefix"
-            # "--exclude"
-            # ".git"
           ];
         };
       };
     };
   };
 
-  keymaps = [
+  keymaps = let
+    findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/-g,!**/*.lock,";
+    findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock",'';
+  in [
     # TODO: add todo finding
     {
       key = "<leader>ff";
-      action = "<CMD>Telescope find_files<CR>";
-      options.desc = "Find Files";
+      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden${findFilesAvoid}<CR>";
+      options.desc = "FindFiles";
     }
-    # {
-    #   key = "<leader>fF";
-    #   action = "<CMD>Telescope find_files find_command=rg,--files,--hidden,--no-ignore${findFilesAvoid}<CR>";
-    #   options.desc = "Find Files Ignored";
-    # }
-    # {
-    #   key = "<leader>f<A-f>";
-    #   action = "<CMD>Telescope find_files find_command=rg,--files,-uu<CR>";
-    #   options.desc = "Find Files All";
-    # }
+    {
+      key = "<leader>ff";
+      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden<CR>";
+      options.desc = "FindFilesAll";
+    }
     {
       key = "<leader>fw";
-      action = ''<CMD>lua require("telescope.builtin").live_grep()<CR>'';
-      options.desc = "Find String";
+      action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden"${findStringAvoid} } end })<CR>'';
+      options.desc = "FindString";
     }
-    # {
-    #   key = "<leader>fW";
-    #   action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden","--no-ignore"${findStringAvoid} } end })<CR>'';
-    #   options.desc = "Find String Ignored";
-    # }
-    # {
-    #   key = "<leader>f<A-w>";
-    #   action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "-uu" } end })<CR>'';
-    #   options.desc = "Find String All";
-    # }
+    {
+      key = "<leader>fW";
+      action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "-uu" } end })<CR>'';
+      options.desc = "FindStringAll";
+    }
+
     {
       key = "<leader>fn";
       action = "<CMD>Telescope notify<CR>";

@@ -15,9 +15,3 @@ To test your configuration simply run the following command
 ```bash
 nix run .
 ```
-
-
-Todo:
-Fix indent
-Fix cursor color
-Otternvim

@@ -13,12 +13,4 @@
     enable = true;
     # TODO: figure out lsp_interop and keybinds
   };
-  plugins.treesitter-refactor = {
-    highlightDefinitions.enable = true;
-    highlightCurrentScope.enable = true;
-    smartRename = {
-      enable = true;
-      keymaps.smartRename = "lr";
-    };
-  };
 }

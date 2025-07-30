@@ -10,10 +10,12 @@
     ./code/blink-cmp.nix
     ./code/blink-cmp-spell.nix
     ./code/conform.nix
+    ./code/dev-tools.nix
     ./code/tailwind-tools.nix
     ./code/guess-indent.nix
     ./code/jupyter.nix
     ./code/lsp.nix
+    ./code/refactor.nix
     ./code/rust-tools.nix
     ./code/tailwind-tools.nix
     ./code/ts-comments.nix
@@ -36,6 +38,7 @@
     ./ux/flash.nix
     ./ux/hlsearch.nix
     ./ux/indent-tools.nix
+    ./ux/snacks.nix
     ./integrations/lazygit.nix
     ./featureToggles.nix
   ];

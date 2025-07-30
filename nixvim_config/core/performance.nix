@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   performance = {
     byteCompileLua = {
       enable = true;
@@ -9,7 +9,7 @@
     # TODO: figure out how to find pathsToLink and ensure everything is there
     combinePlugins = {
       enable = true;
-      standalonePlugins = ["conform.nvim"];
+      standalonePlugins = ["conform.nvim" "snacks.nvim" "refactoring.nvim"];
     };
   };
   luaLoader.enable = true;
