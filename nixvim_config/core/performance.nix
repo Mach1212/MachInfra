@@ -9,7 +9,10 @@
     # TODO: figure out how to find pathsToLink and ensure everything is there
     combinePlugins = {
       enable = true;
-      standalonePlugins = ["conform.nvim" "snacks.nvim" "refactoring.nvim"];
+      standalonePlugins = [
+        "conform.nvim"
+        "snacks.nvim"
+      ];
     };
   };
   luaLoader.enable = true;

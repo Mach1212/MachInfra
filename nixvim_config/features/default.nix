@@ -1,6 +1,5 @@
 {
   imports = [
-    ./backend/toggleterm.nix
     ./backend/treesitter.nix
     ./color/colorscheme.nix
     ./color/indent-blankline.nix
@@ -10,12 +9,11 @@
     ./code/blink-cmp.nix
     ./code/blink-cmp-spell.nix
     ./code/conform.nix
-    ./code/dev-tools.nix
+    # ./code/dev-tools.nix
     ./code/tailwind-tools.nix
     ./code/guess-indent.nix
-    ./code/jupyter.nix
     ./code/lsp.nix
-    ./code/refactor.nix
+    # ./code/refactor.nix
     ./code/rust-tools.nix
     ./code/tailwind-tools.nix
     ./code/ts-comments.nix
@@ -23,6 +21,7 @@
     ./ui/barbar.nix
     ./ui/gitsigns.nix
     # ./ui/chadtree.nix
+    ./ui/diagram.nix
     ./ui/incline.nix
     ./ui/lualine.nix
     ./ui/neotree.nix
@@ -39,9 +38,12 @@
     ./ux/hlsearch.nix
     ./ux/indent-tools.nix
     ./ux/snacks.nix
+    ./integrations/devdocs.nix
     ./integrations/lazygit.nix
+    ./integrations/jupyter.nix
     ./featureToggles.nix
   ];
+  # TODO: add lz-n-auto-require
   # TODO: plugin for automatically replacing [] {} with whatever I replace it with
   # TODO: maybe make this a chain of with ./color, etc?
   # TODO: when I open a new file and it doesn't have anything inside of it "new" then default template should spawn
@@ -75,6 +77,11 @@
         enable_close_on_slash = true;
       };
     };
-    dropbar.enable = true;
+    dropbar = {
+      enable = true;
+      settings = {
+        color_mode = false;
+      };
+    };
   };
 }

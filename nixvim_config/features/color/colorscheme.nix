@@ -3,11 +3,31 @@
     enable = true;
     settings = {
       flavour = "macchiato";
+      default_integrations = false;
       integrations = {
-        notify = true;
+        noice = true;
+        gitsigns = true;
+        flash = true;
+        barbar = true;
+        semantic_tokens = true;
+        treesitter = true;
+        render_markdown = true;
+        neotree = true;
+        snacks.enabled = true;
+        which_key = true;
+        blink_cmp = {
+          style = "bordered";
+        };
+        native_lsp = {
+          enabled = true;
+          inlay_hints.background = true;
+        };
         telescope = {
+          enabled = true;
           style = "nvchad";
         };
+
+        rainbow_delimiters = true;
       };
       custom_highlights =
         # lua

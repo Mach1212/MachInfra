@@ -2,14 +2,17 @@
   plugins.lualine = {
     enable = true;
     settings = {
-      options.__raw =
-        # lua
-        ''
-          {
-          	section_separators = { left = "", right = "" },
-          	component_separators = { left = "", right = "" },
-          }
-        '';
+      options = {
+        theme = "catppuccin";
+        section_separators = {
+          left = "";
+          right = "";
+        };
+        component_separators = {
+          left = "";
+          right = "";
+        };
+      };
       sections = {
         lualine_a.__raw =
           #lua

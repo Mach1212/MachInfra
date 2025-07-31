@@ -5,7 +5,10 @@
     nixvimInjections = false;
     settings = {
       indent.enable = true;
-      highlight.enable = true;
+      highlight = {
+        enable = true;
+        additional_vim_regex_highlighting = false;
+      };
     };
     # TODO: figure out incremental selection keybinds
   };

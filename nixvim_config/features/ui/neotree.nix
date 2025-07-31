@@ -21,4 +21,16 @@
       options.desc = "Neotree Toggle";
     }
   ];
+  # plugins.snacks.settings.explorer = {
+  #   explorer = {
+  #     replace_netrw = false;
+  #   };
+  # };
+  # keymaps = [
+  #   {
+  #     key = "<leader>e";
+  #     action = "<CMD>lua Snacks.explorer()<CR>";
+  #     options.desc = "NeotreeToggle";
+  #   }
+  # ];
 }

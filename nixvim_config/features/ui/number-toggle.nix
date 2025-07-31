@@ -1,7 +1,7 @@
 {
   keymaps = [
     {
-      key = "<leader>un";
+      key = "<leader>ul";
       action = "<CMD>ToggleLineNumbers<CR>";
       options.desc = "Line Numbers Toggle";
     }

@@ -1,34 +1,30 @@
 {
-  plugins.indent-blankline = {
-    enable = true;
-    settings = {
-      scope = {
-        show_end = false;
-        show_exact_scope = false;
-        show_start = false;
-        # TODO: check if this is working
-        highlight = [
-          "GreyBold"
-          # "RainbowRedBold"
-          # "RainbowYellowBold"
-          # "RainbowBlueBold"
-          # "RainbowOrangeBold"
-          # "RainbowGreenBold"
-          # "RainbowVioletBold"
-          # "RainbowCyanBold"
-        ];
-      };
-      indent = {
-        highlight = [
-          "RainbowRedFaded"
-          "RainbowYellowFaded"
-          "RainbowBlueFaded"
-          "RainbowOrangeFaded"
-          "RainbowGreenFaded"
-          "RainbowVioletFaded"
-          "RainbowCyanFaded"
-        ];
-      };
+  plugins.snacks.settings.indent = {
+    indent = {
+      hl = [
+        "RainbowRedFaded"
+        "RainbowYellowFaded"
+        "RainbowBlueFaded"
+        "RainbowOrangeFaded"
+        "RainbowGreenFaded"
+        "RainbowVioletFaded"
+        "RainbowCyanFaded"
+      ];
+    };
+    animate = {
+      enabled = false;
+    };
+    scope = {
+      enabled = true;
+      hl = [
+        "RainbowRed"
+        "RainbowYellow"
+        "RainbowBlue"
+        "RainbowOrange"
+        "RainbowGreen"
+        "RainbowViolet"
+        "RainbowCyan"
+      ];
     };
   };
   highlight = {
@@ -55,7 +51,5 @@
     RainbowGreenBold = {fg = "#98C379";};
     RainbowVioletBold = {fg = "#C678DD";};
     RainbowCyanBold = {fg = "#56B6C2";};
-
-    GreyBold = {fg = "#8F95A3";};
   };
 }

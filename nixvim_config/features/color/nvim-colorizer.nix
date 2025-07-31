@@ -35,9 +35,9 @@
       user_default_options = {
         names = false;
         mode = "virtualtext";
-        virtualtext = "■ ";
+        virtualtext = "■";
         # TODO: Wut this do
-        # virtualtext_inline = true;
+        virtualtext_inline = true;
       };
       user_commands = [
         "ColorizerToggle"

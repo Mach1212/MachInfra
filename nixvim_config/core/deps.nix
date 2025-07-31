@@ -7,6 +7,11 @@ in {
     inotify-tools # lsp
     sccache # lsp
     mold # lsp
+    jq # devdocs
+    curl #devdocs
+    pandoc #devdocs
+    fzf # telescope
+    fzy # telescope
   ];
   extraLuaPackages = ps: [ps.magick];
   # extraPython3Packages = ps: with ps; [pynvim-pp jedi];
