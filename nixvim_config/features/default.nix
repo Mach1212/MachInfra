@@ -18,10 +18,12 @@
     ./code/tailwind-tools.nix
     ./code/ts-comments.nix
     ./code/typescript-tools.nix
+    ./ui/action-hints.nix
     ./ui/barbar.nix
     ./ui/gitsigns.nix
     # ./ui/chadtree.nix
-    ./ui/diagram.nix
+    # ./ui/diagram.nix
+    ./ui/fastaction.nix
     ./ui/incline.nix
     ./ui/lualine.nix
     ./ui/neotree.nix
@@ -38,7 +40,7 @@
     ./ux/hlsearch.nix
     ./ux/indent-tools.nix
     ./ux/snacks.nix
-    ./integrations/devdocs.nix
+    # ./integrations/devdocs.nix
     ./integrations/lazygit.nix
     ./integrations/jupyter.nix
     ./featureToggles.nix

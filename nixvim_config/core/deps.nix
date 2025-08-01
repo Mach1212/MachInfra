@@ -12,6 +12,7 @@ in {
     pandoc #devdocs
     fzf # telescope
     fzy # telescope
+    difftastic # lazygit, tiny-code-action
   ];
   extraLuaPackages = ps: [ps.magick];
   # extraPython3Packages = ps: with ps; [pynvim-pp jedi];

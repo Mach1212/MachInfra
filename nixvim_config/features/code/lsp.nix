@@ -92,11 +92,11 @@
           options.desc = "LspImplementations";
           key = "<leader>li";
         }
-        {
-          action.__raw = "vim.lsp.buf.code_action";
-          options.desc = "LspCodeAction";
-          key = "<leader>la";
-        }
+        # {
+        #   action.__raw = "vim.lsp.buf.code_action";
+        #   options.desc = "LspCodeAction";
+        #   key = "<leader>la";
+        # }
         {
           action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
           options.desc = "LspDiagnosticJump";

@@ -1,4 +1,4 @@
-{
+{helpers, ...}: {
   plugins.neo-tree = {
     enable = true;
     enableGitStatus = true;
@@ -18,13 +18,17 @@
     {
       key = "<leader>e";
       action = "<CMD>Neotree toggle<CR>";
-      options.desc = "Neotree Toggle";
+      options.desc = "NeotreeToggle";
     }
   ];
   # plugins.snacks.settings.explorer = {
   #   explorer = {
   #     replace_netrw = false;
   #   };
+  # };
+  # plugins.snacks.settings.picker.sources.explorer.layout = {
+  #   layout.width = 32;
+  #   auto_hide = helpers.listToUnkeyedAttrs ["input"];
   # };
   # keymaps = [
   #   {

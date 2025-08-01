@@ -73,8 +73,8 @@
     };
   };
   keymaps = let
-    findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/-g,!**/*.lock,";
-    findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock",'';
+    findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/,-g,!**/*.lock";
+    findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock"'';
   in [
     # TODO: add todo finding
     {
@@ -89,7 +89,7 @@
     }
     {
       key = "<leader>fw";
-      action = ''<cmd>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden"${findStringAvoid} } end })<cr>'';
+      action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden"${findStringAvoid} } end })<CR>'';
       options.desc = "findstring";
     }
     {

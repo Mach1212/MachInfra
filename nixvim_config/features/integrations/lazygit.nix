@@ -3,6 +3,7 @@
     config = {
       git = {
         overrideGpg = true;
+        paging.externalDiffCommand = "difft --color=always --display=inline --syntax-highlight=off";
       };
       services = {
         "github.ibm.com" = "github:github.ibm.com";
