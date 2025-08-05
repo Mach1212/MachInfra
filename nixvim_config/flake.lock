@@ -226,6 +226,22 @@
         "type": "github"
       }
     },
+    "lsp-ui": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1752566885,
+        "narHash": "sha256-+4yLsX7yDRkcA/d4Cr1HTRfeI78WZkLAdqPvHD/ev8I=",
+        "owner": "jinzhongjia",
+        "repo": "LspUI.nvim",
+        "rev": "bde93dbd98e384fccce01a10f4a7d232048ed290",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jinzhongjia",
+        "repo": "LspUI.nvim",
+        "type": "github"
+      }
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -376,6 +392,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "lsp-ui": "lsp-ui",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim"

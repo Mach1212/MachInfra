@@ -8,23 +8,25 @@
     ./color/render-markdown.nix
     ./code/blink-cmp.nix
     ./code/blink-cmp-spell.nix
+    ./code/blink-compat.nix
     ./code/conform.nix
     # ./code/dev-tools.nix
     ./code/tailwind-tools.nix
     ./code/guess-indent.nix
+    ./code/lsp-kind.nix
     ./code/lsp.nix
     # ./code/refactor.nix
     ./code/rust-tools.nix
     ./code/tailwind-tools.nix
     ./code/ts-comments.nix
     ./code/typescript-tools.nix
-    ./ui/action-hints.nix
+    # ./ui/action-hints.nix
     ./ui/barbar.nix
     ./ui/gitsigns.nix
     # ./ui/chadtree.nix
     # ./ui/diagram.nix
-    ./ui/fastaction.nix
     ./ui/incline.nix
+    ./ui/lsp-ui.nix
     ./ui/lualine.nix
     ./ui/neotree.nix
     ./ui/noice.nix
@@ -43,6 +45,7 @@
     # ./integrations/devdocs.nix
     ./integrations/lazygit.nix
     ./integrations/jupyter.nix
+    ./integrations/octo.nix
     ./featureToggles.nix
   ];
   # TODO: add lz-n-auto-require

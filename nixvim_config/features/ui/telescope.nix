@@ -1,9 +1,10 @@
-{helpers, ...}: {
+{
   plugins.telescope = {
     enable = true;
     extensions = {
-      fzf-native.enable = true;
-      fzy-native.enable = true;
+      # fzf-native.enable = true;
+      # fzy-native.enable = true;
+      # frecency.enable = true;
     };
     settings.defaults = {
       # path_display = "truncate";
@@ -109,6 +110,9 @@
       options.desc = "Find Buffer";
     }
   ];
+  highlightOverride = {
+    TelescopeSelection = {link = "Visual";};
+  };
   # plugins.snacks.settings.picker = {
   #   enabled = true;
   #   matcher = {

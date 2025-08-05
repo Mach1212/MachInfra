@@ -6,6 +6,12 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    # plugins
+    lsp-ui = {
+      url = "github:jinzhongjia/LspUI.nvim";
+      flake = false;
+    };
   };
 
   # TODO: Nice ui for found swap file. Like Astro have y n a menu

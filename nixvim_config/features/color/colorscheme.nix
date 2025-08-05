@@ -20,13 +20,13 @@
         };
         native_lsp = {
           enabled = true;
+          # TODO: what this do?
           inlay_hints.background = true;
         };
         telescope = {
           enabled = true;
-          style = "nvchad";
+          # style = "nvchad";
         };
-
         rainbow_delimiters = true;
       };
       custom_highlights =

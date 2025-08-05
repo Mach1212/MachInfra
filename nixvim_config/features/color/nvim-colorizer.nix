@@ -34,7 +34,7 @@
       ];
       user_default_options = {
         names = false;
-        mode = "virtualtext";
+        # mode = "virtualtext";
         virtualtext = "■";
         # TODO: Wut this do
         virtualtext_inline = true;

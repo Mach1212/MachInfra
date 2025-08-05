@@ -13,6 +13,7 @@
     inccommand = "split";
     linebreak = true;
     smartindent = true;
+    signcolumn = "yes:1";
   };
 
   globalOpts = {

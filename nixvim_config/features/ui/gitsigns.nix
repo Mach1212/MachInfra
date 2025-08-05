@@ -50,16 +50,8 @@
     #vim
     ''
       function! ToggleGitDiff()
-          if g:mach12toggleGitDiff == 0
-              let g:mach12toggleGitDiff=1
-              Gitsigns toggle_linehl
-              Gitsigns toggle_word_diff
-          elseif g:mach12toggleGitDiff == 1
-              let g:mach12toggleGitDiff=0
-              Gitsigns toggle_linehl
-              Gitsigns toggle_word_diff
-          endif
+        Gitsigns toggle_linehl
+        Gitsigns toggle_word_diff
       endfunction
-      let g:mach12toggleGitDiff = 0
     '';
 }

@@ -8,11 +8,12 @@ in {
     sccache # lsp
     mold # lsp
     jq # devdocs
-    curl #devdocs
-    pandoc #devdocs
+    curl # devdocs
+    pandoc # devdocs
     fzf # telescope
     fzy # telescope
     difftastic # lazygit, tiny-code-action
+    gitflow # lazygit
   ];
   extraLuaPackages = ps: [ps.magick];
   # extraPython3Packages = ps: with ps; [pynvim-pp jedi];

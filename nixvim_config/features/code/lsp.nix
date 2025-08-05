@@ -2,8 +2,7 @@
   # lspconfig is same as lsp.enable. https://github.com/neovim/nvim-lspconfig/blob/master/lsp
   plugins.lsp = {
     enable = true;
-    # TODO: Research this
-    inlayHints = true;
+    inlayHints = false;
     capabilities =
       #lua
       ''
@@ -57,56 +56,66 @@
       docker_compose_language_service.enable = true;
     };
     keymaps = {
-      lspBuf = {
-        # TODO: make this menu slightly transparent
-        K = "hover";
-      };
+      # lspBuf = {
+      #   # TODO: make this menu slightly transparent
+      #   K = "hover";
+      # };
       extra = [
         {
           action.__raw = "require('telescope.builtin').lsp_definitions";
           options.desc = "LspDeclaration";
-          key = "<leader>ld";
+          # key = "<leader>ld";
+          key = "gd";
         }
         {
           action.__raw = "require('telescope.builtin').lsp_references";
           options.desc = "LspReferences";
-          key = "<leader>lr";
+          # key = "<leader>lr";
+          key = "gr";
         }
-        {
-          action.__raw = "vim.lsp.buf.rename";
-          options.desc = "LspRename";
-          key = "<leader>lR";
-        }
-        {
-          action.__raw = "require('telescope.builtin').lsp_type_definitions";
-          options.desc = "LspTypeDefinitions";
-          key = "<leader>lt";
-        }
-        {
-          action.__raw = "require('telescope.builtin').lsp_implementations";
-          options.desc = "LspImplementations";
-          key = "<leader>li";
-        }
-        {
-          action.__raw = "require('telescope.builtin').lsp_implementations";
-          options.desc = "LspImplementations";
-          key = "<leader>li";
-        }
+        #   {
+        #     action.__raw = "vim.lsp.buf.rename";
+        #     options.desc = "LspRename";
+        #     key = "<leader>lR";
+        #   }
         # {
-        #   action.__raw = "vim.lsp.buf.code_action";
-        #   options.desc = "LspCodeAction";
-        #   key = "<leader>la";
+        #   action.__raw = "require('telescope.builtin').lsp_type_definitions";
+        #   options.desc = "LspTypeDefinitions";
+        #   # key = "<leader>lt";
+        #   key = "gt";
         # }
+        # {
+        #   action.__raw = "require('telescope.builtin').lsp_implementations";
+        #   options.desc = "LspImplementations";
+        #   # key = "<leader>li";
+        #   key = "gi";
+        # }
+        #   # {
+        #   #   action.__raw = "vim.lsp.buf.code_action";
+        #   #   options.desc = "LspCodeAction";
+        #   #   key = "<leader>la";
+        #   # }
+        #   {
+        #     action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
+        #     options.desc = "LspDiagnosticJump";
+        #     key = "]d";
+        #   }
+        #   {
+        #     action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
+        #     options.desc = "LspDiagnosticJump";
+        #     key = "[d";
+        #   }
         {
-          action.__raw = "function() vim.diagnostic.jump({ count=1, float=true }) end";
-          options.desc = "LspDiagnosticJump";
-          key = "]d";
+          key = "<leader>li";
+          options.desc = "Lsp Info";
+          action = "<CMD>LspInfo<CR>";
         }
         {
-          action.__raw = "function() vim.diagnostic.jump({ count=-1, float=true }) end";
-          options.desc = "LspDiagnosticJump";
-          key = "[d";
+          key = "<leader>lI";
+          options.desc = "Lsp Log";
+          action = "<CMD>LspLog<CR>";
         }
+
         {
           key = "<leader>ud";
           options.desc = "LspDiagnosticsToggle";
@@ -128,6 +137,13 @@
   extraConfigLua =
     # lua
     ''
+      vim.keymap.del("n", "grt")
+      vim.keymap.del("n", "grr")
+      vim.keymap.del("n", "grn")
+      vim.keymap.del("n", "gri")
+      vim.keymap.del("n", "gra")
+      -- vim.keymap.del("n", "gd")
+
       -- TODO: Reorder diags so errors are first
       -- TODO: Block align diags so lots of them aren't as distracting
       local mach12toggleLspDiagnostics = 2
