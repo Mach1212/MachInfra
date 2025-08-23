@@ -1,10 +1,20 @@
-# 8/23/2025
+# WORKING
+## 8/23/2025
 - lazygit needs to run in background. Its taking too much of my time
+- csv not in \<ff\>
+- commenting jsx inconsistent
+
+## NEXT
+- sort diags, errors buried under others 
+- tab doesn't know wether to escape } or go to autocomplete. Inconsistent behavior
 - lsp autocomplete
 - autopair fixes
+- lualine across whole bottom. no more per window bs
+- debugger
+- branch autosessions
 
 # BACKLOG
-- tab doesn't know wether to escape } or go to autocomplete. Inconsistent behavior
+- Add .gitkeep to created folders
 - Diff two files from different branches
 - FIX DAMN UNDERLINE
 - AUTOIMPORT
@@ -14,7 +24,6 @@
 - telescope/lazygit preview move with fn-left/right/up/down
 - comment doesn't work in jsx
 - git merge conflict highlighting
-- octo not setup for IBM GitHub
 - Renaming accept should be <cr> not <A-c>
 - autofix quickfixes maybe with that new quickfix plugin?
 - Js Debugger
