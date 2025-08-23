@@ -2,9 +2,9 @@
   plugins.telescope = {
     enable = true;
     extensions = {
-      # fzf-native.enable = true;
-      # fzy-native.enable = true;
-      # frecency.enable = true;
+      fzf-native.enable = true;
+      fzy-native.enable = true;
+      frecency.enable = true;
     };
     settings.defaults = {
       # path_display = "truncate";
@@ -75,22 +75,27 @@
   };
   keymaps = let
     findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/,-g,!**/*.lock";
+    # findFilesKeep = ",-g,**/.env";
+    findFilesKeep = "";
     findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock"'';
+    # findStringKeep = '',"-g","**/.env"'';
+    findStringKeep = '''';
   in [
     # TODO: add todo finding
+    # TODO: add .rgignore to keep .env
     {
       key = "<leader>ff";
-      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden${findFilesAvoid}<CR>";
+      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden${findFilesAvoid}${findFilesKeep}<CR>";
       options.desc = "FindFiles";
     }
     {
       key = "<leader>fF";
-      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden<CR>";
+      action = "<CMD>Telescope find_files find_command=rg,--files,--hidden,--no-ignore<CR>";
       options.desc = "FindFilesAll";
     }
     {
       key = "<leader>fw";
-      action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden"${findStringAvoid} } end })<CR>'';
+      action = ''<CMD>lua require("telescope.builtin").live_grep({ additional_args = function() return { "--hidden"${findStringAvoid}${findStringKeep} } end })<CR>'';
       options.desc = "findstring";
     }
     {

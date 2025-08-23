@@ -5,6 +5,7 @@
       lsp.diagnostic_update_events = ["InsertLeave" "BufWritePost"];
       buffers = {
         set_filetype = true;
+        write_to_disk = false;
       };
       verbose = {
         # set to false to disable all verbose messages

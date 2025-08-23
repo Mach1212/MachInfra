@@ -4,7 +4,7 @@
   keymaps = [
     {
       key = "<leader>q";
-      action = "<CMD>wqall<CR>";
+      action = "<CMD>q<CR>";
       options.desc = "Vim Quit";
     }
     {
@@ -49,12 +49,12 @@
     }
     {
       key = "<C-Left>";
-      action = "<C-w><";
+      action = "<C-w>>";
       options.desc = "Pane Goto Left";
     }
     {
       key = "<C-Right>";
-      action = "<C-w>>";
+      action = "<C-w><";
       options.desc = "Pane Goto Right";
     }
     {

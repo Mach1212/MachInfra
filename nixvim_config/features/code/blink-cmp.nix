@@ -3,6 +3,26 @@
     enable = true;
     settings = {
       completion = {
+        menu.draw = {
+          columns = helpers.listToUnkeyedAttrs [
+            (helpers.listToUnkeyedAttrs ["label" "label_description"] // {gap = 1;})
+            (helpers.listToUnkeyedAttrs ["kind_icon" "kind"] // {gap = 1;})
+            # (helpers.listToUnkeyedAttrs ["kind_icon"])
+            # (helpers.listToUnkeyedAttrs ["label"] // {gap = 1;})
+          ];
+          # components.label.__raw =
+          #   #lua
+          #   ''
+          #     {
+          #       text = function(ctx)
+          #           return require("colorful-menu").blink_components_text(ctx)
+          #       end,
+          #       highlight = function(ctx)
+          #           return require("colorful-menu").blink_components_highlight(ctx)
+          #       end,
+          #     }
+          #   '';
+        };
         documentation = {
           auto_show = true;
           auto_show_delay_ms = 500;
@@ -15,13 +35,16 @@
         };
         # TODO: check on this
         trigger.prefetch_on_insert = false;
-        accept.auto_brackets.kind_resolution.blocked_filetypes = [];
+        accept = {
+          auto_brackets.kind_resolution.blocked_filetypes = [];
+          resolve_timeout_ms = 500;
+        };
         sources = {
           cmdline = [];
         };
       };
       # TODO: add spellcheck
-      signature.enabled = true;
+      signature.enabled = false;
       # TODO: align this with telescope maps
       # TODO: indicator when line is out of scope(needs wrapping)
       keymap = {

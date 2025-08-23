@@ -1,6 +1,7 @@
 {
   imports = [
     ./backend/treesitter.nix
+    # ./color/colorful-menu.nix
     ./color/colorscheme.nix
     ./color/indent-blankline.nix
     ./color/nvim-colorizer.nix
@@ -13,14 +14,11 @@
     # ./code/dev-tools.nix
     ./code/tailwind-tools.nix
     ./code/guess-indent.nix
-    ./code/lsp-kind.nix
     ./code/lsp.nix
-    # ./code/refactor.nix
     ./code/rust-tools.nix
     ./code/tailwind-tools.nix
     ./code/ts-comments.nix
     ./code/typescript-tools.nix
-    # ./ui/action-hints.nix
     ./ui/barbar.nix
     ./ui/gitsigns.nix
     # ./ui/chadtree.nix
@@ -40,13 +38,14 @@
     ./ux/better-escape.nix
     ./ux/flash.nix
     ./ux/hlsearch.nix
+    ./ux/illuminate.nix
     ./ux/indent-tools.nix
     ./ux/snacks.nix
     # ./integrations/devdocs.nix
     ./integrations/lazygit.nix
     ./integrations/jupyter.nix
-    ./integrations/octo.nix
-    ./featureToggles.nix
+    # ./integrations/octo.nix
+    ./toggleKeys.nix
   ];
   # TODO: add lz-n-auto-require
   # TODO: plugin for automatically replacing [] {} with whatever I replace it with

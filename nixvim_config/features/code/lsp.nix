@@ -2,11 +2,11 @@
   # lspconfig is same as lsp.enable. https://github.com/neovim/nvim-lspconfig/blob/master/lsp
   plugins.lsp = {
     enable = true;
-    inlayHints = false;
+    inlayHints = false; # Apparently this doesn't work see the extra lua at the bottom manually turning this off
     capabilities =
-      #lua
+      # lua
       ''
-        capabilities = require("blink.cmp").get_lsp_capabilities({
+        require("blink.cmp").get_lsp_capabilities({
         	textDocument = {
         		semanticTokens = {
         			multilineTokenSupport = true,
@@ -20,24 +20,7 @@
 
       markdown_oxide.enable = true;
 
-      lua_ls = {
-        enable = true;
-        extraOptions = {
-          # TODO: Figure this out
-          Lua = {
-            runtime = {
-              version = "LuaJIT";
-            };
-            diagnostics = {
-              # globals = {__raw = "vim";};
-              globals = helpers.listToUnkeyedAttrs ["vim"];
-            };
-            workspace = {
-              library.__raw = ''vim.api.nvim_get_runtime_file("", true)'';
-            };
-          };
-        };
-      };
+      lua_ls.enable = true;
 
       bashls.enable = true;
 
@@ -55,6 +38,7 @@
       dockerls.enable = true;
       docker_compose_language_service.enable = true;
     };
+    # TODO: toggle inlay hints: Off, params, all
     keymaps = {
       # lspBuf = {
       #   # TODO: make this menu slightly transparent
@@ -137,12 +121,23 @@
   extraConfigLua =
     # lua
     ''
+      vim.lsp.inlay_hint.enable(false)
+
       vim.keymap.del("n", "grt")
       vim.keymap.del("n", "grr")
       vim.keymap.del("n", "grn")
       vim.keymap.del("n", "gri")
       vim.keymap.del("n", "gra")
-      -- vim.keymap.del("n", "gd")
+
+      vim.cmd("highlight DiagnosticVirtualTextError guibg=NONE")
+      vim.cmd("highlight DiagnosticVirtualTextWarn guibg=NONE")
+      vim.cmd("highlight DiagnosticVirtualTextInfo guibg=NONE")
+      vim.cmd("highlight DiagnosticVirtualTextHint guibg=NONE")
+      vim.cmd("highlight DiagnosticVirtualTextOk guibg=NONE")
+      vim.cmd("highlight LspDiagnosticsVirtualTextError guibg=NONE")
+      vim.cmd("highlight LspDiagnosticsVirtualTextWarn guibg=NONE")
+      vim.cmd("highlight LspDiagnosticsVirtualTextInformation guibg=NONE")
+      vim.cmd("highlight LspDiagnosticsVirtualTextHint guibg=NONE")
 
       -- TODO: Reorder diags so errors are first
       -- TODO: Block align diags so lots of them aren't as distracting

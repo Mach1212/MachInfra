@@ -15,7 +15,11 @@
   extraConfigLua =
     #lua
     ''
-      require("LspUI").setup({})
+      require("LspUI").setup({
+      	code_action = {
+      		gitsigns = false,
+      	},
+      })
     '';
   keymaps = [
     {

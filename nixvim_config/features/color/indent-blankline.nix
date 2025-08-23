@@ -1,5 +1,6 @@
 {
   plugins.snacks.settings.indent = {
+    enabled = true;
     indent = {
       hl = [
         "RainbowRedFaded"
