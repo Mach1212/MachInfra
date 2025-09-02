@@ -9,7 +9,7 @@
     ./color/render-markdown.nix
     ./code/blink-cmp.nix
     ./code/blink-cmp-spell.nix
-    ./code/blink-compat.nix
+    # ./code/blink-compat.nix # Need to add sources to blink-cmp
     ./code/conform.nix
     # ./code/dev-tools.nix
     ./code/tailwind-tools.nix

@@ -6,6 +6,7 @@
         version = "latest";
         src = vimPlugins.colorful-menu-nvim;
         meta.homepage = "https://github.com/xzbdmw/colorful-menu.nvim";
+        doCheck = false;
       })
   ];
   extraConfigLua =

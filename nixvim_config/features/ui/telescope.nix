@@ -74,10 +74,10 @@
     };
   };
   keymaps = let
-    findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/,-g,!**/*.lock";
+    findFilesAvoid = ",-g,!**/node_modules/,-g,!**/.git/,-g,!**/venv/,-g,!**/*.lock,-g,!**/*.csv";
     # findFilesKeep = ",-g,**/.env";
     findFilesKeep = "";
-    findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock"'';
+    findStringAvoid = '',"-g","!**/node_modules/","-g","!**/.git/","-g","!**/venv/","-g","!**/*.lock","-g","!**/*.csv"'';
     # findStringKeep = '',"-g","**/.env"'';
     findStringKeep = '''';
   in [

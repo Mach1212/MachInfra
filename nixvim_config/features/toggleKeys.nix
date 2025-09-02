@@ -15,5 +15,10 @@
       action = "<CMD>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
       options.desc = "LspInlayHintToggle";
     }
+    {
+      key = "<leader>~I";
+      action = "<CMD>LspUI inlay_hint<CR>";
+      options.desc = "LspUiInlayHintToggle";
+    }
   ];
 }

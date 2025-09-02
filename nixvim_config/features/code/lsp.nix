@@ -121,8 +121,6 @@
   extraConfigLua =
     # lua
     ''
-      vim.lsp.inlay_hint.enable(false)
-
       vim.keymap.del("n", "grt")
       vim.keymap.del("n", "grr")
       vim.keymap.del("n", "grn")

@@ -1,34 +1,34 @@
 # WORKING
 ## 8/23/2025
-- lazygit needs to run in background. Its taking too much of my time
-- csv not in \<ff\>
+- ✅ lazygit needs to run in background. Its taking too much of my time
+- ✅ python lsp hints
+- ✅ csv not in \<ff\>
 - commenting jsx inconsistent
 
-## NEXT
+## 8/28/2025
+- Autocomplete adds two imports in js, buggy as hell
+- <C-o> doesn't go back to a closed file
+- Sort autocomplete. Code complete should be first, text completions second 
+
+# BACKLOG
 - sort diags, errors buried under others 
+- Fix autopairs: authState.role = [] didn't autopair??? Move to ultimate-autopair + endwise + surround + tabout
+- autopair fixes
 - tab doesn't know wether to escape } or go to autocomplete. Inconsistent behavior
 - lsp autocomplete
-- autopair fixes
 - lualine across whole bottom. no more per window bs
 - debugger
 - branch autosessions
-
-# BACKLOG
 - Add .gitkeep to created folders
 - Diff two files from different branches
 - FIX DAMN UNDERLINE
 - AUTOIMPORT
-- lazygit should push in the background
 - Doublecheck autocomplete looks like catppuccine template
-- autocomplete doesn't autoimport
 - telescope/lazygit preview move with fn-left/right/up/down
-- comment doesn't work in jsx
 - git merge conflict highlighting
 - Renaming accept should be <cr> not <A-c>
 - autofix quickfixes maybe with that new quickfix plugin?
-- Js Debugger
 - blink-cmp hover in injected python
-- Fix autopairs: authState.role = [] didn't autopair??? Move to ultimate-autopair + endwise + surround + tabout
 - What are extmarks
 - lazygit use <c-j/k> for scrolling preview like treesitter
 - barbar if filenames are the same regardless of extension show path

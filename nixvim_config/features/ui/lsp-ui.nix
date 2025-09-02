@@ -19,6 +19,9 @@
       	code_action = {
       		gitsigns = false,
       	},
+      	inlay_hint = {
+      		enable = false,
+      	},
       })
     '';
   keymaps = [

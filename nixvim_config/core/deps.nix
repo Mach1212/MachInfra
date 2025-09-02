@@ -14,7 +14,7 @@ in {
     fzy # telescope
     difftastic # lazygit, tiny-code-action
     gitflow # lazygit
-    gh # octo
+    gh # gh-nvim
   ];
   extraLuaPackages = ps: [ps.magick];
   # extraPython3Packages = ps: with ps; [pynvim-pp jedi];
