@@ -1,4 +1,6 @@
 {
+  viAlias = true;
+
   opts = {
     number = true;
     relativenumber = true;

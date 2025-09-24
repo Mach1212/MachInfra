@@ -8,7 +8,7 @@
     ./color/otter.nix
     ./color/render-markdown.nix
     ./code/blink-cmp.nix
-    ./code/blink-cmp-spell.nix
+    # ./code/blink-cmp-spell.nix
     # ./code/blink-compat.nix # Need to add sources to blink-cmp
     ./code/conform.nix
     # ./code/dev-tools.nix
@@ -43,7 +43,7 @@
     ./ux/snacks.nix
     # ./integrations/devdocs.nix
     ./integrations/lazygit.nix
-    ./integrations/jupyter.nix
+    # ./integrations/jupyter.nix
     # ./integrations/octo.nix
     ./toggleKeys.nix
   ];

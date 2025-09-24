@@ -1,3 +1,6 @@
 {
-  wsl.enable = true;
+  wsl = {
+    enable = true;
+    startMenuLaunchers = false;
+  };
 }

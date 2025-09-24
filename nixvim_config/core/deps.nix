@@ -15,6 +15,7 @@ in {
     difftastic # lazygit, tiny-code-action
     gitflow # lazygit
     gh # gh-nvim
+    python313Packages.pylatexenc # render-markdown
   ];
   extraLuaPackages = ps: [ps.magick];
   # extraPython3Packages = ps: with ps; [pynvim-pp jedi];

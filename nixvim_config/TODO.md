@@ -9,6 +9,7 @@
 - Autocomplete adds two imports in js, buggy as hell
 - <C-o> doesn't go back to a closed file
 - Sort autocomplete. Code complete should be first, text completions second 
+- Swap gitgutter and numbers
 
 # BACKLOG
 - sort diags, errors buried under others 
