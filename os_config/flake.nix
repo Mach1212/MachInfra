@@ -16,12 +16,14 @@
       url = "path:../nixvim_config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
     nixpkgs,
     nixos-wsl,
     home-manager,
+    agenix,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -38,14 +40,22 @@
 
       base = [
         home-manager.nixosModules.home-manager
-        ({pkgs, ...}: {
+        ({
+          pkgs,
+          system,
+          ...
+        }: {
           system.stateVersion = "25.05";
           users.mutableUsers = false;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          environment.systemPackages = with pkgs; [
-            # coreutils-full
-          ];
+          environment.systemPackages = [agenix.packages.${system}.default];
+          programs = {
+            zsh.enable = true;
+            neovim.enable = true;
+            neovim.defaultEditor = true;
+          };
+          users.defaultUserShell = pkgs.zsh;
         })
       ];
     in {
